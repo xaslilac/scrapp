@@ -2,7 +2,8 @@
 
 Absolute bare minimum macOS application, that you can generate yourself, from scratch. No Xcode required.
 
-> [!IMPORTANT] While I say "No Xcode required, you do need to have it _installed_, you just don't need to open it, and you don't need an Xcode project. Just a couple scripts.
+> [!IMPORTANT]
+> While I say "No Xcode required, you do need to have it _installed_, you just don't need to open it, and you don't need an Xcode project. Just a couple scripts.
 
 Go from nothing to...
 
