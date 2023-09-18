@@ -2,8 +2,9 @@
 
 Absolute bare minimum macOS application, that you can generate yourself, from scratch. No Xcode required.
 
+<!-- prettier-ignore -->
 > [!IMPORTANT]
-> While I say "No Xcode required, you do need to have it _installed_, you just don't need to open it, and you don't need an Xcode project. Just a couple scripts.
+> While I say "No Xcode required", you do need to have it _installed_, you just don't need to open it, and you don't need an Xcode project.
 
 Go from nothing to...
 

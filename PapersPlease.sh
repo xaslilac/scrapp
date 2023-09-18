@@ -1,37 +1,53 @@
-#!/bin/false
+#!/bin/sh
 
-# Not actually intended to be run directly!
-# Use this flow as a reference for code-signing and notarization!
+set -eu
 
-rm -rf Build/Signed/
+sign() {
+	ARCH="$1"
+	UNSIGNED_APP="Build/$ARCH/Scrapp.app"
+	SIGNED_APP="Build/${ARCH}Signed/Scrapp.app"
 
-mkdir Build/Signed/
-cp -r Build/Unsigned/Scrapp.app Build/Signed/
+	rm -rf "$SIGNED_APP"
+	mkdir -p "$SIGNED_APP"
+	cp -r "$UNSIGNED_APP/" "$SIGNED_APP/"
 
-# Sign with the certificate that we installed to our keychain
-codesign --sign $SIGNID \
-	--timestamp \
-	-o runtime \
-	--entitlements app.entitlements \
-	Build/Signed/Scrapp.app/
+	# Sign with the certificate that we installed to our keychain
+	codesign --sign "$SIGNID" \
+		--timestamp \
+		-o runtime \
+		--entitlements app.entitlements \
+		"$SIGNED_APP"
 
-# Debugging code signing:
-# codesign -dvv Build/Signed/Scrapp.app/
-# codesign -vvv --deep --strict Build/Signed/Scrapp.app/
-# spctl -vvv --assess --type exec Build/Signed/Scrapp.app/
+	# Debugging code signing:
+	# codesign -dvv Build/Signed/Scrapp.app/
+	# codesign -vvv --deep --strict Build/Signed/Scrapp.app/
+	# spctl -vvv --assess --type exec Build/Signed/Scrapp.app/
 
-# Create a .zip that we can notorize
-(cd Build/Signed/; zip -r ../../Scrapp.zip Scrapp.app)
+	# Create a .zip that we can notorize
+	(cd "$SIGNED_APP/.."; zip -r "../../Release/Scrapp-$ARCH-Signed.zip" Scrapp.app)
+}
 
-# "Login" to notarytool first:
-#   xcrun notarytool store-credentials "NOTARY"
+notarize() {
+	ARCH="$1"
+	# Requires that you "Login" to notarytool first:
+	#   xcrun notarytool store-credentials "NOTARY"
 
-# Notorization!
-xcrun notarytool submit Scrapp.zip --wait \
-	--keychain-profile "NOTARY"
+	# Notorization!
+	xcrun notarytool submit "Release/Scrapp-$ARCH-Signed.zip" --wait \
+		--keychain-profile "NOTARY"
 
-# Debugging notarization:
-# xcrun notarytool log $job_id \
-# 	--keychain-profile "NOTARY"
+	# Debugging notarization:
+	# xcrun notarytool log $job_id \
+	# 	--keychain-profile "NOTARY"
 
-xcrun stapler staple Build/Signed/Scrapp.app/
+	# ...and staple!
+	xcrun stapler staple "Build/${ARCH}Signed/Scrapp.app"
+}
+
+# Sign both first
+sign "Apple" # Apple Silicon
+sign "Intel" # Intel
+
+# Notarize together
+notarize "Apple" # Apple Silicon
+notarize "Intel" # Intel

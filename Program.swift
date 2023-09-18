@@ -12,7 +12,7 @@ var window = NSWindow.init(
 
 window.cascadeTopLeft(from: NSMakePoint(20, 20))
 window.makeKeyAndOrderFront(.none)
-window.title = "McKayla"
+window.title = "Scrapp"
 
 NSApp.setActivationPolicy(.regular)
 NSApp.activate(ignoringOtherApps: true)

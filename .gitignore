@@ -4,5 +4,5 @@
 .nova/
 .vscode/
 Build/
+Release/
 *.log
-*.zip
