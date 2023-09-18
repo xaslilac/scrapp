@@ -58,7 +58,7 @@ This will...
 
   - Copy the ID given for your "Developer ID Application: <name> <account id>" certificate
 
-  - Set SIGNID env variable
+  - Set and export SIGNID env variable
 
 - Look up your "Team ID" https://developer.apple.com/account#MembershipDetailsCard
 
@@ -68,6 +68,8 @@ This will...
     xcrun notarytool store-credentials "NOTARY"
     ```
 
-- Go follow along with PapersPlease.sh
+- You should now be able to run PapersPlease.sh to sign and notarize everything
 
-  - It's not runnable directly, but shows a good set of steps to follow that will get you signed and notarized
+```sh
+./PapersPlease.sh
+```
