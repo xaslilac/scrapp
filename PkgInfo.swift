@@ -1,7 +1,7 @@
 #!/usr/bin/env swift
 //! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
-//! Run as a script to generate the PkgInfo file macOS relies on to recognize !
-//! our app as an actual app, rather than just a directory.                   !
+//! Run as a script to generate the PkgInfo file that macOS relies on to      !
+//! recognize our app as an actual app, rather than just a directory.         !
 //! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
 
 import Foundation

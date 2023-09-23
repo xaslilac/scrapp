@@ -1,4 +1,6 @@
-# Scrapp
+<h1 align="center">Scr.app</h1>
+
+<p align="center"><img height=175 src="https://cdn.mckayla.cloud/-/k4h3aeh5ua11v1/Scr.png" /></p>
 
 Absolute bare minimum macOS application, that you can generate yourself, from scratch. No Xcode required.
 

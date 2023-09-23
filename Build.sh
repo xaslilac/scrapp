@@ -29,7 +29,8 @@ build() {
 	fi
 
 	./PkgInfo.swift           "$APP/Contents/PkgInfo"
-	cp ./Info.plist           "$APP/Contents/Info.plist"
+	cp    ./Info.plist        "$APP/Contents/Info.plist"
+	cp -r Resources/          "$APP/Contents/Resources/"
 	swiftc ./Program.swift -o "$APP/Contents/MacOS/program" -target $TRIPLE
 	(cd "$APP/.."; zip -r "../../Release/Scrapp-$ARCH-Unsigned.zip" Scrapp.app)
 }

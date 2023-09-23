@@ -8,8 +8,14 @@
 		<string>Scrapp</string>
 	<key>CFBundleExecutable</key>
 		<string>program</string>
+	<key>CFBundleIconFile</key>
+		<string>Scr.icns</string>
 	<key>CFBundleIdentifier</key>
-		<string>dev.mckayla.Scrapp</string>
+		<string>dev.mckayla.scr</string>
+	<key>CFBundleGetInfoString</key>
+		<string>1.0.0.0 © 2023 McKayla Washburn</string>
+	<key>CFBundleShortVersionString</key>
+		<string>1.0.0.0</string>
 	<key>CFBundlePackageType</key>
 		<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
