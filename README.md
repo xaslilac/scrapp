@@ -6,7 +6,7 @@ Absolute bare minimum macOS application, that you can generate yourself, from sc
 
 <!-- prettier-ignore -->
 > [!IMPORTANT]
-> While I say "No Xcode required", you do need to have it _installed_, you just don't need to open it, and you don't need an Xcode project.
+> While I say "No Xcode required", you do need to have it _installed_ if you want to be able to notarize. You just don't need to open it, and you don't need an Xcode project.
 
 Go from nothing to...
 
@@ -70,8 +70,8 @@ This will...
     xcrun notarytool store-credentials "NOTARY"
     ```
 
-- You should now be able to run PapersPlease.sh to sign and notarize everything
+- You should now be able to run Build.sh to sign and notarize everything
 
 ```sh
-./PapersPlease.sh
+./Build.sh --papers-please
 ```

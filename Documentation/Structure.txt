@@ -1,8 +1,0 @@
-.app Package Structure
-└── Contents
-    ├── Info.plist
-    ├── MacOS
-    │   └── program
-    ├── PkgInfo
-    └── Resources
-        └── << Put whatever you want here! >>

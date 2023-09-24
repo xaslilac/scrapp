@@ -4,6 +4,7 @@
 <dict>
 	<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
+
 	<key>CFBundleName</key>
 		<string>Scrapp</string>
 	<key>CFBundleExecutable</key>
@@ -14,18 +15,17 @@
 		<string>dev.mckayla.scr</string>
 	<key>CFBundleGetInfoString</key>
 		<string>1.0.0.0 © 2023 McKayla Washburn</string>
-	<key>CFBundleShortVersionString</key>
+	<key>CFBundleVersion</key>
 		<string>1.0.0.0</string>
-	<key>CFBundlePackageType</key>
-		<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 		<string>1.0</string>
+
+	<key>CFBundlePackageType</key>
+		<string>APPL</string>
 	<key>CFBundleSupportedPlatforms</key>
 		<array>
 			<string>MacOSX</string>
 		</array>
-	<key>CFBundleVersion</key>
-		<string>1</string>
 	<key>DTPlatformName</key>
 		<string>macosx</string>
 	<key>DTPlatformVersion</key>
